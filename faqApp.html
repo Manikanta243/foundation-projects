@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q & A</title>
+    <style>
+.faq {
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+.faq__subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.55;
+  padding-bottom: 30px;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  padding-top: 50px;
+}
+
+.faq__question{
+  margin: 5px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  padding: 10px;
+  width: 60%;
+  text-align: left;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 3;
+  position: relative;
+  padding-left: 30px;
+  transition: all 0.2s ease;
+  box-shadow: 0px 0px 8px #999;
+  cursor: default;
+}
+.faq__panel {
+  display: none;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 60%;
+  overflow: hidden;
+  padding-left: 20%;
+  text-align: center;
+  top: 0;
+}
+
+.faq__question:after {
+  content: "\002b";
+  position: absolute;
+  right: 25px;
+  font-size: 24px;
+  bottom: 0px;
+  cursor: pointer;
+}
+
+.faq__question_active:after {
+  content: "\002d";
+  font-size: 25px;
+}
+.faq__answer {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  text-align: left;
+  border: none;
+  font-size: 16px;
+  line-height: 2;
+  padding-left: 30px;
+  box-shadow:  0px 2px #b9b8b8c7;
+}
+
+.faq__panel_active {
+  display: block;
+}
+    </style>
+</head>
+<body>
+    <div class="faq">
+        <p class="faq__subtitle">
+            FAQs</p>
+        <button class="faq__question">Do You Accept All Major Credit Cards?</button>
+        <div class="faq__panel">
+          <p class="faq__answer">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est dolore illo dolores quia nemo doloribus quaerat, magni numquam repellat reprehenderit.
+          </p>
+        </div>
+        <button class="faq__question">
+            Do You Support Local Farmers?
+        </button>
+        <div class="faq__panel">
+          <p class="faq__answer">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est dolore illo dolores quia nemo doloribus quaerat, magni numquam repellat reprehenderit.
+          </p>
+        </div>
+        <button class="faq__question">Do You Use Organic Ingredients?
+        </button>
+        <div class="faq__panel">
+          <p class="faq__answer">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est dolore illo dolores quia nemo doloribus quaerat, magni numquam repellat reprehenderit.
+          </p>
+        </div>
+      </div>
+      <script>
+        let questions = document.querySelectorAll(".faq__question");
+            questions.forEach((question) => {
+    question.addEventListener("click", function () {
+    question.classList.toggle("faq__question_active");
+    const nextElement = question.nextElementSibling;
+    nextElement.classList.toggle("faq__panel_active");
+  });
+});
+      </script>
+</body>
+</html>

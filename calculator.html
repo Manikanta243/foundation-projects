@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+        body {
+             display: flex;
+             justify-content: center;
+             margin-top: 80px;
+             background-color: #000;
+        }
+        .container1{
+            text-align: center;
+            padding-top: 55px;
+        }
+        .container2{
+            background-color: aliceblue;
+            width: 25pc;
+            height: 19pc;
+            padding-top: 4pc;
+            line-height: 3pc;
+        }
+        .inputbox, .results{
+            padding: 10px 16px;
+            font-size: 18px;
+            margin: 10px 0px;
+            margin-top: -5%;
+        }
+        .results{
+            width: 17pc;
+            height: 2.8pc;
+            font-size: 18px;
+            margin: 10px 0px;
+        }
+        .functionButton{
+            width:  3pc;
+            height: 3pc;
+            display: inline;
+            margin: 5px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<form  class="container1">
+    <div class="container2">
+         Num1 <input type="text" class="inputbox" id="firstNumber" /><br>
+         Num2  <input type="text" class="inputbox" id="secondNumber" /><br>
+         Result  <button type="text" class="results"><span id = "result"></span></button><br>
+
+    <input class="functionButton" type="button" onClick="addBy()" value="+">
+    <input class="functionButton" type="button" onClick="subBy()" value="-">
+    <input class="functionButton" type="button" onClick="mulBy()" Value="x" />
+    <input class="functionButton" type="button" onClick="divBy()" Value="/" />
+</div>
+
+    </form>
+    <script>
+         function addBy()
+{
+        num1 = document.getElementById("firstNumber").value;
+        num2 = document.getElementById("secondNumber").value;
+        document.getElementById("result").innerHTML = parseInt(num1) + parseInt(num2);
+}
+function subBy()
+{
+        num1 = document.getElementById("firstNumber").value;
+        num2 = document.getElementById("secondNumber").value;
+        document.getElementById("result").innerHTML = num1 - num2;
+}
+function mulBy()
+{
+        num1 = document.getElementById("firstNumber").value;
+        num2 = document.getElementById("secondNumber").value;
+        document.getElementById("result").innerHTML = num1 * num2;
+}
+
+function divBy() 
+{ 
+        num1 = document.getElementById("firstNumber").value;
+        num2 = document.getElementById("secondNumber").value;
+        document.getElementById("result").innerHTML = num1 / num2;
+}
+
+    </script>
+</body>
+</html>
